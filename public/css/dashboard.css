@@ -1,0 +1,692 @@
+/* Inicio, biblioteca y lectura de publicaciones. */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 312px;
+  overflow: hidden;
+  border: 1px solid #544537;
+  border-radius: 22px;
+  background:
+    linear-gradient(90deg, #101b2cfb 0%, #101b2ce0 42%, #101b2c35 100%),
+    url("../img/marte-atardecer.jpg") right center / cover;
+}
+
+.hero-grid {
+  width: 100%;
+}
+
+.hero-texto {
+  z-index: 1;
+  max-width: 660px;
+  padding: 35px clamp(24px, 4vw, 48px);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+}
+
+.hero h1 em {
+  color: #ffab7d;
+  font-style: normal;
+}
+
+.hero p {
+  max-width: 510px;
+  margin: 0 0 23px;
+  color: #cbd6e6;
+}
+
+.hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tarjetas-beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  max-width: 620px;
+  margin-top: 25px;
+}
+
+.mini-beneficio {
+  padding: 13px 12px;
+  border: 1px solid #54617380;
+  border-radius: 11px;
+  background: #0b1423ad;
+}
+
+.mini-beneficio strong,
+.mini-beneficio span {
+  display: block;
+}
+
+.mini-beneficio strong {
+  margin-bottom: 6px;
+  color: #ffd3b2;
+  font-size: .87rem;
+}
+
+.mini-beneficio span {
+  color: #e0e7f3;
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.resumen-dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.resumen-caja {
+  padding: 21px 22px;
+  border: 1px solid var(--linea);
+  border-radius: 15px;
+  background: var(--panel);
+}
+
+.resumen-caja span,
+.resumen-caja small {
+  display: block;
+  color: #a6bdd5;
+}
+
+.resumen-caja span {
+  font-size: .84rem;
+}
+
+.resumen-caja strong {
+  display: block;
+  margin: 9px 0;
+  color: #ffad83;
+  font-size: 2.1rem;
+}
+
+.resumen-caja small {
+  font-size: .78rem;
+}
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.categoria-tarjeta {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
+  padding: 26px 23px;
+  border: 1px solid var(--linea);
+  border-radius: 17px;
+  background: #15273e;
+  color: var(--texto);
+  text-align: left;
+}
+
+.categoria-icono {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 57px;
+  height: 57px;
+  border-radius: 15px;
+  background: #2a405a;
+  color: #aed2ff;
+  font-size: 2rem;
+}
+
+.categoria-tarjeta strong,
+.categoria-tarjeta small,
+.categoria-tarjeta b {
+  display: block;
+}
+
+.categoria-tarjeta strong {
+  font-size: 1.1rem;
+}
+
+.categoria-tarjeta small {
+  margin: 8px 0 12px;
+  color: var(--suave);
+  line-height: 1.55;
+}
+
+.categoria-tarjeta b {
+  color: #ffae83;
+  font-size: .86rem;
+}
+
+.categoria-misiones .categoria-icono {
+  background: #48392f;
+  color: #ffc393;
+}
+
+.cabecera-categoria {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  align-items: center;
+  gap: 22px;
+  min-height: 232px;
+  padding: 30px 34px;
+  border: 1px solid var(--linea);
+  border-radius: 20px;
+  background: var(--panel);
+}
+
+.cabecera-categoria h1 {
+  margin: 11px 0 12px;
+}
+
+.cabecera-categoria p {
+  max-width: 670px;
+  margin: 0;
+}
+
+.imagen-categoria {
+  height: 172px;
+  border-radius: 15px;
+  background: url("../img/valles-marineris.jpg") center / cover;
+}
+
+.cabecera-categoria.misiones .imagen-categoria {
+  background-image: url("../img/perseverance-rover.jpg");
+}
+
+.barra-busqueda {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin: 8px 0 4px;
+}
+
+.barra-busqueda label {
+  margin: 0;
+  color: #b6c9df;
+  font-size: .86rem;
+}
+
+.barra-busqueda input {
+  max-width: 330px;
+}
+
+.contador {
+  margin: 15px 0 21px;
+  color: #99b0cb;
+  font-size: .84rem;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.tarjeta {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  border-radius: 17px;
+  background: var(--panel);
+}
+
+.tarjeta img {
+  display: block;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+}
+
+.tarjeta-cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.tipo {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #375476;
+  border-radius: 100px;
+  background: #233953;
+  color: #aed5ff;
+  font-size: .73rem;
+  font-weight: 700;
+}
+
+.tarjeta-cuerpo h3 {
+  margin: 13px 0 6px;
+  font-size: 1.08rem;
+}
+
+.tarjeta-cuerpo p {
+  flex: 1;
+  margin: 0 0 18px;
+  font-size: .89rem;
+}
+
+.tarjeta-cuerpo .boton {
+  margin-top: auto;
+}
+
+.vacio {
+  grid-column: 1 / -1;
+  padding: 34px;
+  border: 1px dashed var(--linea);
+  border-radius: 13px;
+  text-align: center;
+}
+
+.boton-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  margin: 0 0 18px;
+  border: 0;
+  background: transparent;
+  color: #e7b18b;
+  font-size: .94rem;
+  font-weight: 700;
+}
+
+.boton-volver:hover {
+  color: #fff;
+}
+
+.indice-lectura {
+  align-self: start;
+  padding: 23px;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  background: #0d1e33;
+}
+
+.indice-lectura strong {
+  display: block;
+  margin: 13px 0 8px;
+  font-size: .95rem;
+}
+
+.indice-lectura p {
+  margin: 0;
+  font-size: .82rem;
+}
+
+.cabecera-articulo {
+  padding: 38px 44px 30px;
+}
+
+.cabecera-articulo h1 {
+  max-width: 890px;
+  margin: 20px 0 16px;
+}
+
+.introduccion-lectura {
+  max-width: 820px;
+  color: #d3e0f0;
+  font-size: 1.07rem;
+}
+
+.meta-lectura {
+  display: flex;
+  gap: 20px;
+  margin-top: 22px;
+  color: #86a4c4;
+  font-size: .78rem;
+}
+
+.portada-lectura {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+.cuerpo-lectura {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 36px;
+  padding: 40px 44px 49px;
+}
+
+.texto-articulo {
+  max-width: 700px;
+}
+
+.texto-articulo h2 {
+  margin-bottom: 22px;
+  font-size: 1.3rem;
+}
+
+.texto-lectura p {
+  margin: 0 0 23px;
+  color: #d3dfef;
+  font-size: 1rem;
+  line-height: 1.94;
+}
+
+.articulo-completo {
+  overflow: hidden;
+  border: 1px solid #344b64;
+  border-radius: 19px;
+  background: #15253b;
+  box-shadow: 0 20px 55px #02081627;
+}
+
+.portada-editorial {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  isolation: isolate;
+  min-height: 420px;
+  overflow: hidden;
+  background: #18293f;
+}
+
+.portada-editorial::after {
+  position: absolute;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 15, 27, .96) 0%, rgba(9, 18, 30, .84) 32%, rgba(10, 19, 30, .42) 66%, rgba(10, 18, 28, .14) 100%),
+    linear-gradient(0deg, rgba(12, 24, 39, .65) 0%, transparent 60%);
+  content: "";
+  inset: 0;
+}
+
+.portada-editorial .portada-lectura {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  inset: 0;
+}
+
+.portada-editorial .cabecera-articulo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 860px;
+  padding: 48px 50px 45px;
+}
+
+.portada-editorial .cabecera-articulo h1 {
+  max-width: 790px;
+  margin: 15px 0 14px;
+  color: #fff;
+  font-size: clamp(1.9rem, 3.3vw, 2.9rem);
+  letter-spacing: -.035em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.portada-editorial .introduccion-lectura {
+  max-width: 620px;
+  margin: 0;
+  color: #eef3fa;
+  font-size: 1.075rem;
+  line-height: 1.6;
+}
+
+.portada-editorial .meta-lectura {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 22px;
+  color: #d8e5f3;
+  font-size: .79rem;
+}
+
+.articulo-completo .cuerpo-lectura {
+  display: block;
+  max-width: none;
+  margin: 0 auto;
+  padding: 38px clamp(24px, 5vw, 58px) 45px;
+}
+
+.articulo-completo .texto-articulo {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.encabezado-lectura {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #344a62;
+}
+
+.encabezado-lectura h2 {
+  margin: 9px 0 7px;
+  font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+}
+
+.encabezado-lectura p {
+  max-width: 620px;
+  margin: 0;
+  color: #b9cce1;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.marca-informativa {
+  flex: 0 0 auto;
+  padding: 9px 14px;
+  border: 1px solid #7e5148;
+  border-radius: 99px;
+  background: #382d2e;
+  color: #eab494;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.articulo-completo .texto-lectura p {
+  max-width: 75ch;
+  margin: 0 0 18px;
+  color: #e1eaf4;
+  font-size: 1.025rem;
+  line-height: 1.85;
+}
+
+.articulo-completo .texto-lectura p:first-child {
+  color: #f6f8ff;
+  font-size: 1.095rem;
+}
+
+.articulo-completo .texto-lectura .lectura-destacada {
+  max-width: none;
+  margin: 0;
+  padding: 21px 25px;
+  border-left: 4px solid #f28b56;
+  border-radius: 0 15px 15px 0;
+  background: linear-gradient(100deg, #21364e, #1a2b40);
+  color: #f5f7fc;
+  font-size: clamp(1rem, 1.35vw, 1.13rem);
+  line-height: 1.7;
+}
+
+.lectura-secciones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.lectura-apartado {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #304761;
+  border-radius: 15px;
+  background: #122238;
+}
+
+.lectura-apartado:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.lectura-apartado-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.lectura-numero {
+  display: grid;
+  flex: 0 0 39px;
+  place-items: center;
+  height: 39px;
+  border-radius: 11px;
+  background: #50352e;
+  color: #ffc398;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.lectura-apartado h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.03rem;
+  line-height: 1.35;
+}
+
+.articulo-completo .texto-lectura .lectura-apartado p {
+  max-width: none;
+  margin: 0;
+  color: #cedbed;
+  font-size: .95rem;
+  line-height: 1.72;
+}
+
+.nota-imagen {
+  margin: 24px 0 0;
+  padding: 19px 0 0;
+  border-top: 1px solid #34485f;
+  background: transparent;
+  color: #a8bcd1;
+  font-size: .75rem;
+  text-align: left;
+}
+
+.datos-marte {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 19px;
+}
+
+.dato-marte {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  min-width: 0;
+  padding: 23px 22px;
+  border: 1px solid #344b67;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #182c46 0%, #122138 100%);
+}
+
+.dato-insignia {
+  display: grid;
+  flex: 0 0 58px;
+  place-items: center;
+  min-height: 58px;
+  padding: 5px;
+  border: 1px solid #9c6246;
+  border-radius: 15px;
+  background: #493329;
+  color: #ffc198;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.dato-etiqueta {
+  display: block;
+  margin: 0 0 8px;
+  color: #adc8e8;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.dato-marte h3 {
+  margin: 0 0 9px;
+  color: #fff;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.dato-marte p {
+  margin: 0;
+  color: #d0deef;
+  font-size: .86rem;
+  line-height: 1.6;
+}
+
+.galeria-marte {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.galeria-marte figure {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--linea);
+  border-radius: 15px;
+  background: var(--panel);
+}
+
+.galeria-marte img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.galeria-marte figcaption {
+  padding: 14px 15px;
+  color: #f4f7ff;
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+.aviso-galeria {
+  margin: 12px 0 0;
+  color: #91a8c1;
+  font-size: .76rem;
+}
+
+.categoria-articulos {
+  background:
+    linear-gradient(90deg, #15273ef0, #15273ecf),
+    url("../img/canones-marcianos.jpg") center / cover;
+}
+
+.categoria-misiones {
+  background:
+    linear-gradient(90deg, #15273ef0, #15273ecf),
+    url("../img/perseverance-rover.jpg") center / cover;
+}
+
+.categoria-tarjeta:hover,
+.tarjeta:hover,
+.galeria-marte figure:hover {
+  border-color: #e9a374;
+  transform: translateY(-2px);
+  transition: transform .2s, border-color .2s;
+}

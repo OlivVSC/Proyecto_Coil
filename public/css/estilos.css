@@ -1,0 +1,5 @@
+/* Hoja principal: importa estilos compartidos y módulos por página. */
+@import url("base.css");
+@import url("dashboard.css");
+@import url("admin.css");
+@import url("responsive.css");

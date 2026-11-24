@@ -1,0 +1,206 @@
+/* Lista, editor y confirmación de eliminación. */
+.cabecera-admin {
+  padding: 36px;
+  border: 1px solid var(--linea);
+  border-radius: 20px;
+  background: linear-gradient(120deg, #15243b, #23354a);
+}
+
+.cabecera-admin p {
+  margin: 0;
+}
+
+.herramientas-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.filtros {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  padding: 11px 15px;
+  border: 1px solid var(--linea);
+  border-radius: 9px;
+  background: #1e344f;
+  color: #b7d7fc;
+  font-weight: 700;
+}
+
+.filtro.activo {
+  border-color: #ffe2d2;
+  background: #342c35;
+  color: #ffd2b7;
+}
+
+.herramientas-admin input {
+  width: min(100%, 320px);
+}
+
+.lista-admin {
+  display: grid;
+  gap: 11px;
+}
+
+.fila-admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--linea);
+  border-radius: 13px;
+  background: var(--panel);
+}
+
+.fila-admin .info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.fila-admin img {
+  flex: 0 0 auto;
+  width: 90px;
+  height: 70px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.fila-admin h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.fila-admin p {
+  margin: 0;
+  font-size: .82rem;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.acciones button {
+  padding: 10px 12px;
+  border: 1px solid #456180;
+  border-radius: 9px;
+  background: #233a56;
+  color: #fff;
+  font-size: .79rem;
+  font-weight: 700;
+}
+
+.acciones button.peligro {
+  border-color: #915d63;
+  color: #ffc1bd;
+}
+
+.acciones a.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border: 1px solid #456180;
+  border-radius: 9px;
+  background: #233a56;
+  color: #fff;
+  font-size: .79rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.acciones a.boton:hover {
+  background: #2c4a6e;
+}
+
+.editor {
+  max-width: 900px;
+  padding: 30px;
+  border: 1px solid var(--linea);
+  border-radius: 17px;
+  background: var(--panel);
+}
+
+.editor h2 {
+  margin-top: 11px;
+}
+
+.editor p {
+  margin-top: 0;
+}
+
+.campos-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.acciones-editor {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 23px;
+  flex-wrap: wrap;
+}
+
+.dialogo-confirmacion {
+  width: min(440px, calc(100vw - 32px));
+  max-width: none;
+  padding: 0;
+  border: 1px solid #3b5068;
+  border-radius: 18px;
+  background: var(--panel);
+  color: var(--texto);
+  box-shadow: 0 24px 80px #000b;
+}
+
+.dialogo-confirmacion::backdrop {
+  background: rgba(3, 9, 18, .78);
+  backdrop-filter: blur(4px);
+}
+
+.dialogo-confirmacion-contenido {
+  padding: clamp(22px, 5vw, 30px);
+}
+
+.dialogo-confirmacion h2 {
+  margin: 10px 0;
+}
+
+.dialogo-confirmacion p {
+  margin: 0;
+  color: #bdcce0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.dialogo-confirmacion p strong {
+  color: #fff;
+}
+
+.acciones-confirmacion {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.boton.boton-eliminar {
+  border-color: #bd4d58;
+  background: #a83d48;
+  color: #fff;
+}
+
+.boton.boton-eliminar:hover {
+  background: #c64b57;
+}

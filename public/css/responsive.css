@@ -1,0 +1,333 @@
+/* Ajustes de distribución por tamaño de pantalla. */
+@media (max-width: 1190px) {
+  .datos-marte {
+    grid-template-columns: 1fr;
+  }
+
+  .dato-marte {
+    padding: 17px 20px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .indice-lectura {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 1140px) {
+  .galeria-marte {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .acceso {
+    grid-template-columns: 1fr;
+  }
+
+  .acceso-imagen {
+    min-height: 210px;
+  }
+
+  .texto-imagen {
+    display: none;
+  }
+
+  .aplicacion {
+    display: block;
+  }
+
+  .lateral {
+    position: relative;
+    height: auto;
+    gap: 10px;
+    padding: 17px 17px 12px;
+    border-right: 0;
+    border-bottom: 1px solid var(--linea);
+  }
+
+  .marca-lateral {
+    padding: 0 4px 8px;
+  }
+
+  .lateral-titulo,
+  .lateral-pie {
+    display: none;
+  }
+
+  .navegacion {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    width: auto;
+    padding: 10px 14px;
+    border: 1px solid var(--linea);
+    font-size: .85rem;
+    white-space: nowrap;
+  }
+
+  .nav-icono {
+    width: 18px;
+    height: 18px;
+    font-size: 1rem;
+  }
+
+  .nav-flecha {
+    display: none;
+  }
+
+  .lateral-admin .nav-item {
+    display: inline-flex;
+    margin-top: 3px;
+  }
+
+  .barra-superior {
+    min-height: 66px;
+    padding: 14px 22px;
+  }
+
+  .contenido-principal {
+    padding: 25px 22px 60px;
+  }
+
+  .cabecera-categoria {
+    grid-template-columns: 1fr;
+  }
+
+  .imagen-categoria {
+    display: none;
+  }
+
+  .categorias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resumen-dashboard {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .portada-editorial {
+    min-height: 370px;
+  }
+
+  .portada-editorial .cabecera-articulo {
+    padding: 38px 34px;
+  }
+
+  .articulo-completo .cuerpo-lectura {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .dato-insignia {
+    flex-basis: 50px;
+    min-height: 50px;
+    font-size: 1rem;
+  }
+
+  .dato-marte {
+    gap: 13px;
+    padding: 17px;
+  }
+
+  .encabezado-lectura {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lectura-secciones {
+    grid-template-columns: 1fr;
+  }
+
+  .lectura-apartado:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .lectura-apartado {
+    padding: 19px;
+  }
+
+  .articulo-completo .texto-lectura .lectura-destacada {
+    padding: 18px 19px;
+  }
+}
+
+@media (max-width: 590px) {
+  .barra-superior {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .cuenta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero {
+    min-height: 310px;
+    background:
+      linear-gradient(90deg, #101b2cfb, #101b2ce0 65%, #101b2c72),
+      url("../img/marte-panorama-exploracion.jpg") center / cover;
+  }
+
+  .hero-texto {
+    padding: 29px 23px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .resumen-dashboard {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .resumen-caja {
+    padding: 16px 18px;
+  }
+
+  .resumen-caja strong {
+    margin: 4px 0;
+    font-size: 1.6rem;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecera-categoria {
+    padding: 25px;
+  }
+
+  .barra-busqueda {
+    display: block;
+  }
+
+  .barra-busqueda input {
+    max-width: none;
+    margin-top: 8px;
+  }
+
+  .fila-flex,
+  .fila-admin {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .acciones button {
+    flex: 1;
+  }
+
+  .herramientas-admin input {
+    width: 100%;
+  }
+
+  .campos-dos {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .editor {
+    padding: 22px;
+  }
+
+  .categoria-tarjeta {
+    padding: 21px 18px;
+  }
+
+  .portada-editorial {
+    min-height: 370px;
+  }
+
+  .portada-editorial::after {
+    background: linear-gradient(
+      0deg,
+      rgba(8, 17, 30, .97) 0%,
+      rgba(9, 19, 32, .80) 57%,
+      rgba(9, 18, 30, .30) 100%
+    );
+  }
+
+  .portada-editorial .cabecera-articulo {
+    padding: 30px 23px;
+  }
+
+  .portada-editorial .cabecera-articulo h1 {
+    font-size: 1.9rem;
+  }
+
+  .portada-editorial .introduccion-lectura {
+    font-size: .95rem;
+  }
+
+  .articulo-completo .cuerpo-lectura {
+    padding: 26px 22px 32px;
+  }
+
+  .articulo-completo .texto-lectura p {
+    font-size: .98rem;
+    line-height: 1.76;
+  }
+
+  .galeria-marte {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .galeria-marte img {
+    height: 126px;
+  }
+
+  .galeria-marte figcaption {
+    padding: 10px;
+    font-size: .78rem;
+  }
+
+  .logo-lateral {
+    width: 176px;
+  }
+
+  .logo-login {
+    width: min(100%, 275px);
+  }
+
+  .tarjetas-beneficios {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-beneficio {
+    padding: 11px;
+  }
+
+  .acciones a.boton {
+    flex: 1;
+  }
+}
+
+@media (max-width: 440px) {
+  .acciones-confirmacion {
+    flex-direction: column-reverse;
+  }
+
+  .acciones-confirmacion .boton {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
